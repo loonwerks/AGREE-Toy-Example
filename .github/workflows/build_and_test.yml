@@ -1,0 +1,21 @@
+name: Build and Test Project
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+    types: [ opened, reopened, edited ]
+  workflow_dispatch:
+
+jobs:
+  verify:
+    runs-on: linux
+    steps:
+    - name: AGREE Analysis
+      uses: loonwerks/agree-tools@v1rc1
+      with:
+        project-name: AGREE-Toy-Example
+        component-to-analyze: Integer_Toy::top_level.Impl
+        analysis-strategy: single
+
