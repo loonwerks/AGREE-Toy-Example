@@ -10,7 +10,7 @@ on:
 
 jobs:
   verify:
-    runs-on: linux
+    runs-on: ubuntu-latest
     steps:
     - name: AGREE Analysis
       uses: loonwerks/agree-tools@v1rc1
