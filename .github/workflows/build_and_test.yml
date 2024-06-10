@@ -13,8 +13,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
+    - name: Copy AGREE Analysis Action
+      uses: actions/checkout@v3
+      with:
+        repository: loonwerks/AGREE-CI-Action
+        path: AGREE-CI-Action
     - name: AGREE Analysis
-      uses: loonwerks/agree-tools@v1rc1
+      uses: ./AGREE-CI-Action
       with:
         project-name: AGREE-Toy-Example
         component-to-analyze: Integer_Toy::top_level.Impl
