@@ -1,3 +1,5 @@
 /.aadlbin-gen/
 instances/
 *.aird
+/.metadata/
+**/.aadlbin-gen/
