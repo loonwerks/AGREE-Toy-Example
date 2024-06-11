@@ -19,9 +19,16 @@ jobs:
         repository: loonwerks/AGREE-CI-Action
         path: AGREE-CI-Action
     - name: AGREE Analysis
+      id : agree
       uses: ./AGREE-CI-Action
       with:
         project-name: AGREE-Toy-Example
         component-to-analyze: Integer_Toy::top_level.Impl
         analysis-strategy: single
+    - name: Get analysis timestamp
+      run: echo "Analysis timestamp is ${{ steps.agree.outputs.timestamp }}"
+    - name: Get analysis status
+      run: echo "Analysis status is ${{ steps.agree.outputs.status }}"
+    - name: Get analysis status-messages
+      run: echo "Analysis status messages are ${{ steps.agree.outputs.status-messages }}"
 
