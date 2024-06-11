@@ -31,4 +31,10 @@ jobs:
       run: echo "Analysis status is ${{ steps.agree.outputs.status }}"
     - name: Get analysis status-messages
       run: echo "Analysis status messages are ${{ steps.agree.outputs.status-messages }}"
+    - name: Archive analysis results
+      uses: actions/upload-artifact@v4
+      with:
+        name: agree-analysis-report
+        path: AGREE_output.json
+        retention-days: 30
 
