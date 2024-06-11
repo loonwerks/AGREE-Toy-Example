@@ -12,9 +12,9 @@ jobs:
   verify:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
     - name: Copy AGREE Analysis Action
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
       with:
         repository: loonwerks/AGREE-CI-Action
         path: AGREE-CI-Action
