@@ -2,7 +2,7 @@ package Integer_Toy
 public 
    with Base_Types;
    
-   
+-- small change
 system A
 	features
 		Input: in data port Base_Types::Integer;
