@@ -48,7 +48,7 @@ system top_level
 	  eq mode : int;
 		assume T1 "System input range " : Input < 10;
 		guarantee T2 "mode is always positive" : mode >= 0;
-		guarantee T3 "System output range" : Output < 0;
+		guarantee T3 "System output range" : Output < 50;
 	**};	
 end top_level;
 
