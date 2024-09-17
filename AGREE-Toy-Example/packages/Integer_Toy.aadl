@@ -9,8 +9,8 @@ system A
 		Output: out data port Base_Types::Integer;
 			
 	annex agree {** 
-		assume "A input range" : Input < 20;
-		guarantee "A output range" : Output < 2*Input;
+		assume A1 "A input range" : Input < 20;
+		guarantee A2 "A output range" : Output < 2*Input;
 	**};	
 end A ; 
 
@@ -20,8 +20,8 @@ system B
 		Output: out data port Base_Types::Integer;
 			
 	annex agree {** 
-		assume "B input range" : Input < 20;
-		guarantee "B output range" : Output < Input + 15;
+		assume B1 "B input range" : Input < 20;
+		guarantee B2 "B output range" : Output < Input + 15;
 	**};	
 end B ; 
 
@@ -34,8 +34,8 @@ system C
 	annex agree {** 
 	  eq mode : int;
 	  
-	  guarantee "mode always is increasing" : mode >= 0 -> mode > pre(mode);
-		guarantee "C output range" : Output = if mode = 3 then (Input1 + Input2) else 0;
+	  guarantee C1 "mode always is increasing" : mode >= 0 -> mode > pre(mode);
+		guarantee C2 "C output range" : Output = if mode = 3 then (Input1 + Input2) else 0;
 	**};	
 end C ; 
    
@@ -46,9 +46,9 @@ system top_level
 	annex agree {** 
 	    
 	  eq mode : int;
-		assume "System input range " : Input < 10;
-		guarantee "mode is always positive" : mode >= 0;
-		guarantee "System output range" : Output < 0;
+		assume T1 "System input range " : Input < 10;
+		guarantee T2 "mode is always positive" : mode >= 0;
+		guarantee T3 "System output range" : Output < 50;
 	**};	
 end top_level;
 
